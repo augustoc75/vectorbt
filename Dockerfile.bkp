@@ -28,12 +28,12 @@ USER $NB_UID
 
 ARG TEST
 
-# RUN if [[ -n "${TEST}" ]] ; then \
-#    pip install --no-cache-dir pytest && \
-#    export NUMBA_BOUNDSCHECK=1 && \
-#    export NUMBA_DISABLE_JIT=1 && \
-#    python -m pytest tests ; fi
+RUN if [[ -n "${TEST}" ]] ; then \
+    pip install --no-cache-dir pytest && \
+    export NUMBA_BOUNDSCHECK=1 && \
+    export NUMBA_DISABLE_JIT=1 && \
+    python -m pytest tests ; fi
 
-# WORKDIR "$HOME/work"
+WORKDIR "$HOME/work"
 
-# ENV JUPYTER_ENABLE_LAB "yes"
+ENV JUPYTER_ENABLE_LAB "yes"
