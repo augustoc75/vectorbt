@@ -1,11 +1,11 @@
 #!/bin/bash
 
-curl -O https://netcologne.dl.sourceforge.net/project/ta-lib/ta-lib/0.4.0/ta-lib-0.4.0-src.tar.gz
-tar -xzf ta-lib-0.4.0-src.tar.gz
-cd ta-lib/ || exit
+curl -0 https://github.com/ta-lib/ta-lib/releases/download/v0.6.4/ta-lib-0.6.4-src.tar.gz
+tar -xzf ta-lib-0.6.4-src.tar.gz
+cd ta-lib-0.6.4/ || exit
 ./configure --prefix=/usr
 make
 sudo make install
 cd ..
 rm -rf ta-lib
-rm ta-lib-0.4.0-src.tar.gz
+rm ta-lib-0.6.4-src.tar.gz
